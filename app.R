@@ -1,8 +1,8 @@
 # Written by: Grace Freeman - WDNR-OAS
 # Contact info: grace.freeman@wisconsin.gov
 
-# Updated by:
-# Contact info:
+# Updated by: Beth Wojcik 
+# Contact info: beth.wojcik@wisconsin.gov
 
 # Purpose: Aging Data Entry
 # App used for data entry, data cleaning, and data visualization for the 
@@ -18,12 +18,17 @@
 # This is a Shiny web application. You can run the application by clicking
 # the 'Run App' button above.
 
+## When Beth switched Grace's app to new shiny account, all files/folders in the wmcommons location that Grace had were copy and pasted into a version controlled R project, then the "old" subfolder and example data csv files were deleted. I think the "rsconnect" subfolder was left in tact and may have prevented the app from being published to Beth's shiny account. The "rsconnect" subfolder should have been deleted then run and publish the app. To resolve this, we ran the following code in the console:
+# deployApp(account = "oas-deer-research", appName = "DeerAgingApp")
+## and it was a success...it created a new dsf file in the rsconnect folder that had info specific to the new working directory and shiny accountInfo()
+## In the future, if I copy and paste app files like this then delete the rsconnect subfolder before running and publishing...when publishing it will create the rsconnect folder using the image building and files in the working directory that will be associated/published to the shiny account provided 
 
 #rsconnect::setAccountInfo(name='mlaging', token='A8A5859852EEA6474DB8C853E22C94B6', secret='4MsMkfI3qx/xp7p2QSLcArtScX+uhgc4Sm0f73rm')
-rsconnect::setAccountInfo(name='oas-deer-research', token='EC8DCD24A6D20DE09A88CD824D9D6EDE', secret='6bKJpdXZYvJB8fSxZwKBpF/Ybhb3HNKI1hqWaBSf')
+rsconnect::setAccountInfo(name='oas-deer-research', token='EC8DCD24A6D20DE09A88CD824D9D6EDE', secret='6bKJpdXZYvJB8fSxZwKBpF/Ybhb3HNKI1hqWaBSf') # setting this to Beth's free shiny account
 
 library(rsconnect)
 #rsconnect::deployApp('Y:/Freeman/RShinyAging')
+# rsconnect::deployApp('C:/Users/wojcib/Documents/OAS-deer-research/RShinyAging')
 
 # R packages required
 library(shiny)
@@ -37,7 +42,8 @@ library(tableHTML)
 library(DT)
 #library(tags)
 
-#setwd('Y:/Freeman/RShinyAging') 
+# setwd('Y:/Freeman/RShinyAging') 
+# getwd()
 
 #### Pre-processing outside app ####
 dmus <- as.list(sort(c("Vernon Farmland", "Crawford Farmland", "Grant Farmland", 
