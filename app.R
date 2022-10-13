@@ -8,8 +8,8 @@
 # App used for data entry, data cleaning, and data visualization for the 
 # WDNR biologist staff
 
-# Last updated: 15 August 2022
-# Recent updates: Switching app from wmcommmons and Grace's free shiny account to Beth's version control R project and Beth's free shiny account
+# Last updated: 10 October 2022
+# Recent updates: Reverting to older version of shiny package to redeploy app with new contact phone number
 
 # Reminders:
 # 1) CSV must be formatting with appropriate columns - send template to biologists at start of the season
@@ -18,6 +18,7 @@
 # This is a Shiny web application. You can run the application by clicking
 # the 'Run App' button above (or use code in console)
 # and publish the app using the publish option to the right of the 'Run App' button above (or use code in console)
+# 
 
 ###############################################################################
 ## NOTES FROM SWITCHING THE APP FROM GRACE'S SHINY ACCOUNT TO BETH'S
@@ -51,16 +52,16 @@
 ## every time you update R, go thru a process of using R to look at all the folders and the package version and put into a datatable and save as csv then update r and reimport packages from csv....
 
 # R packages required
-library(shiny)
-library(shinyalert)
-library(readr)
-library(slickR) # photo gallery
+library(shiny) # version 1.4.0
+library(shinyalert) # version 3.0.0
+library(readr) # version 2.1.2
+library(slickR) # photo gallery # version 0.5.0
 library(magick) # use to resize images and animate 
-library(dplyr)
-library(stringr)
-library(tableHTML)
-library(DT)
-#library(tags)
+library(dplyr) # version 1.0.8
+library(stringr) # version 1.4.1
+library(tableHTML) # version 2.1.0
+library(DT) # version 0.23
+# library(tags)
 
 # setwd('Y:/Freeman/RShinyAging') 
 # getwd()
