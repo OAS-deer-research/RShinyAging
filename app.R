@@ -63,10 +63,22 @@ library(tableHTML) # version 2.1.0
 library(DT) # version 0.23
 # library(tags)
 
+## trouble shooting how to save persistent data
+library(RCurl) # using github for master data storage; getURL
+library(rio)
+install_formats("rio")
 # setwd('Y:/Freeman/RShinyAging') 
 # getwd()
 
 #### Pre-processing outside app ####
+## RCurl method
+# backupfilepath <- getURL("https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingBackUp2022.csv")
+# masterfilepath <- getURL("https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingMaster2022.csv")
+## rio method
+backupfilepath <- "https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingBackUp2022.csv"
+masterfilepath <- "https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingMaster2022.csv"
+
+
 dmus <- as.list(sort(c("Vernon Farmland", "Crawford Farmland", "Grant Farmland", 
                        "Richland Farmland", "Sauk Farmland", "Columbia Farmland","Dodge Farmland", "Washington Farmland", "Ozaukee Farmland", 
                        "Iowa Farmland", "Dane Farmland", "Jefferson Farmland", "Waukesha Farmland", "Milwaukee Farmland", "Lafayette Farmland", "Green Farmland", "Rock Farmland", 
@@ -96,6 +108,7 @@ ui <- fluidPage(
   navbarPage(" ", 
              id = 'tabs', 
              tabPanel(("Welcome"), ## Welcome Page 
+                      h2(strong("ATTENTION: the app is temporarily down! Check back in a few days to use the app. In the meantime, continue to save your data using the Excel template on your local computer.")),
                       h2("Welcome to the WDNR app for aging data entry. This process involves 6 steps. Be sure to follow them",strong("exactly"),"!"),
                       h3("1. Use the Excel template to record aging data at meat processors. Save as .csv on your computer."),
                       h3("2. Upload your .csv to the app. The app will recode your .csv data and format to a standardized version (ie. adds DMU column, 'doe' or 'Doe' becomes 'Female', etc.) and adds an error column."),
@@ -370,29 +383,44 @@ server <- function(input, output, session) {
     {nrow(error_table())} #calculates the number of non-NA errors, this number determines whether we see the download or save button.
   )#close reactive
   
+  
+  
   observeEvent(input$MLSave, {
-    
     # read in the file
-    backup <- read_csv("MLAgingMaster2022.csv")
+    # backup <- read.csv(text = masterfilepath)
+    ## read in the file RCurl method
+    backup <- read.csv(file = textConnection(masterfilepath))
+    ## read in the file rio method
+    # backup <- rio::import("https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingMaster2022.csv")
     # save the file data to a backup file
-    write.csv(backup, file = "MLAgingBackUp2022.csv", 
-              row.names = FALSE)
+    # write.csv(backup, file = backupfilepath, 
+    #           row.names = FALSE)
+    # export(backup, file = backupfilepath, 
+    #            row.names = FALSE)
+    rio::export(backup, "https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingBackUp2022.csv")
     # Add the new data to the old data
     x <- rbind(backup, df())
     # Arrange by DeerID
     x <- dplyr::arrange(x, as.numeric(DeerID))
     # update the master data file
-    write.csv(x, file = "MLAgingMaster2022.csv", 
-              row.names = FALSE)
+    # write.csv(x, file = masterfilepath, 
+    #           row.names = FALSE)
+    # export(x, file = masterfilepath, 
+    #            row.names = FALSE)
+    rio::export(x, "https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingMaster2022.csv")
     #close the else statement
     shinyalert(" ", 
                "ML Aging Master File Updated", "success" )
   } #close observe event statement bracket
   ) #close observe event statement
+
+  
   
   #### FOR REVIEW 
   output$ReviewChoice  <- renderUI({
-    review.raw <-read_csv("MLAgingMaster2022.csv") #read in the entire database
+   #  review.raw <-read.csv(text = masterfilepath) #read in the entire database
+    review.raw <- read.csv(file = textConnection(masterfilepath))
+    # review.raw <- rio::import("https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingMaster2022.csv")
     review.raw$FullName <- paste(review.raw$LastName, review.raw$FirstName, sep = ", ")
     if(input$Search_By == "Name"){ #if the radio button selected is name, filter by name
       selectInput("NameInput", "Enter Your Name:",
@@ -408,7 +436,8 @@ server <- function(input, output, session) {
   ) #close renderUI
   
   output_for_agg  <- reactive({
-    review.raw <-read_csv("MLAgingMaster2022.csv")
+    review.raw <- read.csv(file = textConnection(masterfilepath))
+    # review.raw <- rio::import("https://raw.githubusercontent.com/OAS-deer-research/RShinyAging/main/MLAgingMaster2022.csv")
     review.raw$FullName <- paste(review.raw$LastName, review.raw$FirstName, sep = ", ")
     if(input$Search_By == "Processor"){
       req(input$ProcessorInput)
@@ -501,7 +530,7 @@ server <- function(input, output, session) {
   ) #close renderTable
   
   
-  master <- reactive({df <- read_csv("MLAgingMaster2022.csv")
+  master <- reactive({df <- read.csv(file = textConnection(masterfilepath))
   df$FullName <-  paste(df$LastName, df$FirstName, sep = ", ")
   df
   } #close reactive
@@ -510,4 +539,5 @@ server <- function(input, output, session) {
 
 # Create Shiny app ----
 shinyApp(ui=ui, server=server)
+
 
