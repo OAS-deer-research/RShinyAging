@@ -16,6 +16,7 @@ Notes for next year:
 - The review tabs can take a long time if there is a lot of data in the database.
 - Remove white space from cells...especially county names (folks just see the spelling is correct and don't know how to check for white space) and people names (so there aren't multiple DeerIDs being created?).   
 - How do we record deer aging data if the zone is not recorded? Isabella Eagen had data from split counties where the hunter did not fill out the aging card correctly; there were sections left blank so it is unknown if it was Monroe Farm or Forest, etc. Izzy is getting a DMU error for these records so she can't save to the database. Is there any way to salvage these records? Do we still want to record them somehow? If so, then how? Is it the same processor that has a lot of these cases with missing data (yes, Leroy's)?  
+- If we send a template next year, explain that ages showing as a date will be corrected in the app to show correctly.  
  
 
 
