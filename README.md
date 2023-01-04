@@ -10,7 +10,9 @@ Notes for next year:
 - There should no commas in the csv file. One person had commas in the Comments column which caused the deerid number to be recycled in the comments column. Another person had a comma in a processor name (Kewaskum Foods, LLC).  
 - Angela Lemminger emailed that the numbers in the review tab did not look correct. The master db indicated the data was uploaded multiple times and showed multiple versions of the DeerID which wouldn't have been caught as duplicates. For example, there were cases of DeerID = "CotterJasonCotterJason100" and "CotterJasonCotterJasonCotterJason100". So they uploaded the downloaded error file at least twice.   
 - The file naming convention that people are using sucks. When folks would email with app questions, I would received data files that were named "Copy of Data Entry Template_erros (1).csv" or "Copy of Data Entry Template_Newcsv3.xlsx".  
-- Folks may have been using the template but weren't using the drop down box? For example, there were folks that had spelling errors in the county name.
+- Folks may have been using the template but weren't using the drop down box? For example, there were folks that had spelling errors in the county name.  
+- The upload can take a long time if there is a lot of data in the upload file and/or the database. Add a message indicated there will be a check appear once the master db has been updated with their data...so the save button isn't hit multiple times causing multiple uploades and taking longer.  
+- The review tabs can take a long time if there is a lot of data in the database.
 
 
 
