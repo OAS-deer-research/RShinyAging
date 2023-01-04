@@ -14,7 +14,8 @@ Notes for next year:
 - The upload can take a long time if there is a lot of data in the upload file and/or the database. Add a message indicated there will be a check appear once the master db has been updated with their data...so the save button isn't hit multiple times causing multiple uploades and taking longer.  
 - Angela Lemminger data was taking a long time to submit...so long that the app would disconnect from the server. There was a lot of data in the db at that point.
 - The review tabs can take a long time if there is a lot of data in the database.
-- Remove white space from cells...especially names so there aren't multiple DeerIDs being created?  
-
+- Remove white space from cells...especially names so there aren't multiple DeerIDs being created?    
+- How do we record deer aging data if the zone is not recorded? Isabella Eagen had data from split counties where the hunter did not fill out the aging card correctly; there were sections left blank so it is unknown if it was Monroe Farm or Forest, etc. Izzy is getting a DMU error for these records so she can't save to the database. Is there any way to salvage these records? Do we still want to record them somehow? If so, then how? Is it the same processor that has a lot of these cases with missing data?  
+ 
 
 
