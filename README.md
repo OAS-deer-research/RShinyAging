@@ -12,7 +12,9 @@ Notes for next year:
 - The file naming convention that people are using sucks. When folks would email with app questions, I would received data files that were named "Copy of Data Entry Template_erros (1).csv" or "Copy of Data Entry Template_Newcsv3.xlsx".  
 - Folks may have been using the template but weren't using the drop down box? For example, there were folks that had spelling errors in the county name.  
 - The upload can take a long time if there is a lot of data in the upload file and/or the database. Add a message indicated there will be a check appear once the master db has been updated with their data...so the save button isn't hit multiple times causing multiple uploades and taking longer.  
+- Angela Lemminger data was taking a long time to submit...so long that the app would disconnect from the server. There was a lot of data in the db at that point.
 - The review tabs can take a long time if there is a lot of data in the database.
+- Remove white space from cells...especially names so there aren't multiple DeerIDs being created?  
 
 
 
