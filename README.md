@@ -17,7 +17,9 @@ Notes for next year:
 - Remove white space from cells...especially county names (folks just see the spelling is correct and don't know how to check for white space) and people names (so there aren't multiple DeerIDs being created?).   
 - How do we record deer aging data if the zone is not recorded? Isabella Eagen had data from split counties where the hunter did not fill out the aging card correctly; there were sections left blank so it is unknown if it was Monroe Farm or Forest, etc. Izzy is getting a DMU error for these records so she can't save to the database. Is there any way to salvage these records? Do we still want to record them somehow? If so, then how? Is it the same processor that has a lot of these cases with missing data (yes, Leroy's)?  
 - If we send a template next year, explain that ages showing as a date will be corrected in the app to show correctly.  
-- disconnect prior to upload...fix so that once we reach critical load of data we remove chunk so it runs faster (still need master file for review tab)! Set it up so this happens at midnight when no one using app.
+- disconnect prior to upload...fix so that once we reach critical load of data we remove chunk so it runs faster (still need master file for review tab)! Set it up so this happens at midnight when no one using app.  
+- Is there something with teh shinyio settings that can be changed to prevent disconnecting from the server (https://shiny.rstudio.com/articles/scaling-and-tuning.html)?  
+- Is the disconnecting from server related to the shiny package version that is being used? The app didn't seem to run when it was the latest version so it uses 1.4.0 but one reference indicated version >= 1.4.7 (https://shiny.rstudio.com/articles/reconnecting.html).  
  
 
 
