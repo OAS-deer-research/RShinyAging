@@ -20,6 +20,6 @@ Notes for next year:
 - disconnect prior to upload...fix so that once we reach critical load of data we remove chunk so it runs faster (still need master file for review tab)! Set it up so this happens at midnight when no one using app.  
 - Is there something with teh shinyio settings that can be changed to prevent disconnecting from the server (https://shiny.rstudio.com/articles/scaling-and-tuning.html)?  
 - Is the disconnecting from server related to the shiny package version that is being used? The app didn't seem to run when it was the latest version so it uses 1.4.0 but one reference indicated version >= 1.4.7 (https://shiny.rstudio.com/articles/reconnecting.html).  
- 
+- add note about using the same name for all their data (Jed Hopp and Jedd Hopp; Emma Hanson and Emma Hansen)  
 
 
