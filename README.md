@@ -21,6 +21,7 @@ Notes for next year:
 - Is there something with teh shinyio settings that can be changed to prevent disconnecting from the server (https://shiny.rstudio.com/articles/scaling-and-tuning.html)?  
 - Is the disconnecting from server related to the shiny package version that is being used? The app didn't seem to run when it was the latest version so it uses 1.4.0 but one reference indicated version >= 1.4.7 (https://shiny.rstudio.com/articles/reconnecting.html).  
 - add note about using the same name for all their data (Jed Hopp and Jedd Hopp; Emma Hanson and Emma Hansen)  
-- consider asking to ID processors that are agers (at least 2 cases of processors, not DNR staff, aging deer) by including note in data entry comment  
+- consider asking to ID processors that are agers (at least 2 cases of processors, not DNR staff, aging deer) by including note in data entry comment   
+- make sure DMUs are spelled as 'St Croix' and 'Fond du Lac' to match gis files
 
 
