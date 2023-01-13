@@ -24,4 +24,15 @@ Notes for next year:
 - consider asking to ID processors that are agers (at least 2 cases of processors, not DNR staff, aging deer) by including note in data entry comment   
 - make sure DMUs are spelled as 'St Croix' and 'Fond du Lac' to match gis files
 
+ISSUES WITH APP AFTER LOOKING AT DATA IN AGING REPO:  
+
+- County drop down should have 'Fond du Lac' and 'St Croix' so it matches gis file spellings.  
+- App was allowing errant ages (not producing an error) and including some that should have been corrected by app. Folks had ages: 1, 1-Jan, 2-Jan, 3, 3-Jan, '4 5', '6 8', 8-Jun  
+- App data showed 2 variations of legal spike spelling (Legalspikes and LegalSpikes)  
+- There were DeerIDs and DMUs in the comment column. I thought that was happening because of commas and we corrected that, but apparently not. This made checking the comments more tedious.   
+- Folks are submitting deer from car killed deer (at least they noted it in the comments)  
+- The app allowed a male yearling with unknown antler characteristics...should that happen?  
+- There are spelling variations happening for Name and Processor. Make a note in app instructions? Have app show the different factor levels so they correct it before submission?  
+
+
 
