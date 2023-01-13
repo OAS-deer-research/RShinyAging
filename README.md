@@ -1,7 +1,7 @@
 # RShinyAging
 shiny app for biologists to enter aging data
 
-Notes for next year:    
+**Notes for next year:**      
 
 - Brandon Rochefort asked if there will be an option to filter/search by harvest year in the future. It might be nice to have a plot at the bottom of the Data Review tab that shows sample sizes by year for observer, processor, or DMU.    
 - Request that DeerID uses 01, 02, 03, etc. for first 9 numbers so that the order stays the same when looking at upload and master data.  
@@ -24,7 +24,7 @@ Notes for next year:
 - consider asking to ID processors that are agers (at least 2 cases of processors, not DNR staff, aging deer) by including note in data entry comment   
 - make sure DMUs are spelled as 'St Croix' and 'Fond du Lac' to match gis files
 
-ISSUES WITH APP AFTER LOOKING AT DATA IN AGING REPO:  
+**ISSUES WITH APP AFTER LOOKING AT DATA IN AGING REPO:**    
 
 - County drop down should have 'Fond du Lac' and 'St Croix' so it matches gis file spellings.  
 - App was allowing errant ages (not producing an error) and including some that should have been corrected by app. Folks had ages: 1, 1-Jan, 2-Jan, 3, 3-Jan, '4 5', '6 8', 8-Jun  
