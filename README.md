@@ -23,6 +23,8 @@ shiny app for biologists to enter aging data
 - add note about using the same name for all their data (Jed Hopp and Jedd Hopp; Emma Hanson and Emma Hansen)  
 - consider asking to ID processors that are agers (at least 2 cases of processors, not DNR staff, aging deer) by including note in data entry comment   
 - make sure DMUs are spelled as 'St Croix' and 'Fond du Lac' to match gis files
+- add a timestamp to submission/upload so we can tell when samples are submitted...might be nice to have in case something goes wonky with app, but maybe not esp.if we turn the app.
+- Why did we get so many taxidermy samples in 2022? Do the biologists know that they are likely biased? Do we need to better communicate?
 
 **ISSUES WITH APP AFTER LOOKING AT DATA IN AGING REPO:**    
 
@@ -33,6 +35,7 @@ shiny app for biologists to enter aging data
 - Folks are submitting deer from car killed deer (at least they noted it in the comments)  
 - The app allowed a male yearling with unknown antler characteristics...should that happen?  
 - There are spelling variations happening for Name and Processor. Make a note in app instructions? Have app show the different factor levels so they correct it before submission?  
+- We ended up with ~2,000 more samples between 1/17/2023 and 1/25/2023 downloads...well after submission deadline. WE NEED TO TURN OFF APP SO THEY CAN'T SUBMIT DATA!
 
 
 
