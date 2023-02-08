@@ -37,6 +37,7 @@ shiny app for biologists to enter aging data
 - The app allowed a male yearling with unknown antler characteristics...should that happen?  
 - There are spelling variations happening for Name and Processor. Make a note in app instructions? Have app show the different factor levels so they correct it before submission?  
 - We ended up with ~2,000 more samples between 1/17/2023 and 1/25/2023 downloads...well after submission deadline. WE NEED TO TURN OFF APP SO THEY CAN'T SUBMIT DATA!
+- We had Brooke Vanhandel had 400 meat locker ages without a processor name. We can't tell who submitted the data or when so who should we be contacting to get processor name? It could be that Brooke Vanhandel isn't in the staff directory. Need to know who is submitting data in addition to when.
 
 
 
