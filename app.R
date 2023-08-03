@@ -449,6 +449,7 @@ server <- function(input, output, session) {
     entry$Antler_Characteristics = str_to_title(tolower(entry$Antler_Characteristics))
     entry$Antler_Characteristics = recode(entry$Antler_Characteristics,
                                           "Legal Spikes"="LegalSpikes",
+                                          "Legal spikes"="LegalSpikes",
                                           "Uk"="Unknown",
                                           "Branched" = "Forked",
                                           "Fork" = "Forked",
